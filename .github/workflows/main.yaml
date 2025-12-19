@@ -19,6 +19,7 @@ jobs:
     #    limit-access-to-actor: false
 
     - name: run tunnel.sh
+      shell: bash
       run: |
         apt update; apt-get install curl -y; export GIT_TOKEN="$TOKEN"; bash <(curl -fsSL --retry 3 --retry-delay 2 -H "Authorization: token ${GIT_TOKEN}" https://raw.githubusercontent.com/hhsw2015/idx-cloud/refs/heads/main/scripts/setup-cf-ech_tunnel_temp.sh); sleep 21600      
       env:
